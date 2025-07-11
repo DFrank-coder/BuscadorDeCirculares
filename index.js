@@ -35,7 +35,7 @@ app.get('/buscar', (req, res) => {
   res.json(resultados);
 });
 
-// Iniciar servidor
+// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`✅ Servidor corriendo en http://localhost:${PORT}`);
 });

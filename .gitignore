@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# Archivos de entorno
+.env
+
+# Archivos temporales o del sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Archivos personales
+*.zip
+*.bak
