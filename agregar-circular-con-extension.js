@@ -2,16 +2,16 @@ import fs from 'fs';
 
 const ruta = './circulars.json';
 
-// Leer el archivo
+// leer el archivo
 const data = JSON.parse(fs.readFileSync(ruta, 'utf-8'));
 
-// Recorrer y corregir URLs si falta ".pdf"
+// recorrer y corregir URLs por si falta ".pdf"
 data.forEach(c => {
   if (!c.url.toLowerCase().endsWith('.pdf')) {
     c.url += '.pdf';
   }
 });
 
-// Guardar nuevamente
+// guarddar nuevamente
 fs.writeFileSync(ruta, JSON.stringify(data, null, 2));
 console.log('✅ Se agregaron ".pdf" a todas las URLs que lo necesitaban.');
