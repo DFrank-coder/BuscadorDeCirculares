@@ -15,12 +15,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/archivos', express.static(path.join(__dirname, 'circulares_drive')));
 
 
-// Ruta para mostrar la vista HTML
+// ruta para mostrar la vista HTML
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'buscar.html'));
 });
 
-// Ruta para buscar circulares desde circulars.json
+// ruta para buscar circulares desde circulars.json
 app.get('/buscar', (req, res) => {
   const query = req.query.q?.toLowerCase() || "";
 
@@ -35,7 +35,7 @@ app.get('/buscar', (req, res) => {
   res.json(resultados);
 });
 
-// Iniciar el servidor
+// para iniciar el servidor
 app.listen(PORT, () => {
   console.log(`✅ Servidor corriendo en http://localhost:${PORT}`);
 });

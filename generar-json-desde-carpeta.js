@@ -18,7 +18,7 @@ const circulares = archivos.map((nombre) => {
     palabrasClave: nombreSinExtension
       .split(/[\s-_]+/)
       .map(p => p.toLowerCase()),
-    url: `/archivos/${nombre}` // ← usa el nombre real del archivo
+    url: `/archivos/${nombre}` 
   };
 });
 

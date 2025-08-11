@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
-// Ruta al archivo JSON
+// ruta al archivo JSON
 const rutaJson = './circulars.json';
 
-// NUEVO ARCHIVO PDF a agregar (colocá el nombre real que pegaste en "mis_circulares")
+// NUEVO ARCHIVO PDF a agregar
 const nuevoArchivo = 'Chaleco para Señalero Principal (Marshall)';
 
-// Preparar nueva entrada
+// preparar nueva entrada
 const nombreSinExt = nuevoArchivo.replace(/\.[^/.]+$/, '');
 const nuevaCircular = {
   id: nombreSinExt,
@@ -16,13 +16,13 @@ const nuevaCircular = {
   url: `/archivos/${nuevoArchivo}`
 };
 
-// Cargar el JSON actual
+// cargar el JSON actual
 let circulares = [];
 if (fs.existsSync(rutaJson)) {
   circulares = JSON.parse(fs.readFileSync(rutaJson, 'utf-8'));
 }
 
-// Verificar si ya existe
+// Verifico si ya existe
 const existe = circulares.some(c => c.id === nuevaCircular.id);
 
 if (!existe) {
@@ -30,5 +30,5 @@ if (!existe) {
   fs.writeFileSync(rutaJson, JSON.stringify(circulares, null, 2));
   console.log(`✅ Circular agregada: ${nuevaCircular.id}`);
 } else {
-  console.log('⚠️ La circular ya existe en el archivo.');
+  console.log('⚠️ La circular ya exitse en el archivo.');
 }

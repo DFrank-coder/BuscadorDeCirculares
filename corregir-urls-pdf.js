@@ -2,10 +2,10 @@ import fs from 'fs';
 
 const ruta = './circulars.json';
 
-// Leer el archivo
+// leer el archivo
 const data = JSON.parse(fs.readFileSync(ruta, 'utf-8'));
 
-// Revisar y corregir URLs
+// revisar y corregir las URLs
 const corregido = data.map(c => {
   if (!c.url) {
     c.url = `/archivos/${c.id}.pdf`;
@@ -15,6 +15,6 @@ const corregido = data.map(c => {
   return c;
 });
 
-// Guardar archivo corregido
+// Guardar el archivo corregido
 fs.writeFileSync(ruta, JSON.stringify(corregido, null, 2), 'utf-8');
-console.log('✅ Todas las URLs fueron corregidas con extensión .pdf');
+console.log('✅ Todas las URLs fueron corregidas con exito.');
